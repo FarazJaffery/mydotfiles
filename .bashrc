@@ -7,7 +7,10 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-PS1="\\u:\\w\\$ "
+#PS1="\\u:\\w\\$ "
+#PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\w\[\033[00m\]\$ '
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -115,3 +118,34 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+export EDITOR=nano
+
+
+# enable completion features for your commands and arguments
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
